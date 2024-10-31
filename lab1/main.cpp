@@ -1,4 +1,7 @@
+//ВАРИАНТ 13
+
 #include <iostream>
+
 
 void fillArray(double* array, int size)
 {
