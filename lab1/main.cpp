@@ -28,7 +28,7 @@ void printArray(const double* array,
                 int size,
                 const char* arrayName = "Array",
                 bool exponential = false,
-                int precision = 6)
+                int precision = DEFAULT_PRESCISION)
 {
     if (exponential)
         std::cout << std::scientific;
@@ -100,8 +100,8 @@ int main()
     std::cout << "Элементы массива Y, рассчитанные по функции F(Xi):\n";
     printArray(y, XY_SIZE, "y", false, 3);
 
-    int x1Size;
     std::cout << "\nВведите количество элементов в массиве X1: ";
+    int x1Size;
     std::cin >> x1Size;
     while (x1Size < 10 || x1Size > 15) {
         std::cout << "Размер массива не может быть больше 15 или меньше 10. Попробуйте еще раз.";
