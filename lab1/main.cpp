@@ -17,7 +17,8 @@ void inputArray(double* array, int size)
         std::cin >> array[i];
 }
 
-void fillArithmProgression(double* array, int size, double first, double step)
+void fillArithmProgression(double* array, int size,
+                           double first, double step)
 {
     array[0] = first;
     for (int i = 1; i < size; ++i)
@@ -52,7 +53,7 @@ double averageArray(const double* array, int size)
     return result;
 }
 
-double calculateFunction(double x)
+double calculateFunctionResult(double x)
 {
     double result;
     if (x < 0) {
@@ -90,13 +91,13 @@ int main()
     double first;
     std::cin >> first;
     fillArithmProgression(x, XY_SIZE, first, 6.3);
-    std::cout << "Элементы массива X: ";
+    std::cout << "Элементы массива X: \n";
     printArray(x, XY_SIZE, "x");
 
     printf("Среднее значение элементов массива X: %e\n\n", averageArray(x, XY_SIZE));
 
     for (int i = 0; i < XY_SIZE; ++i)
-        y[i] = calculateFunction(x[i]);
+        y[i] = calculateFunctionResult(x[i]);
     std::cout << "Элементы массива Y, рассчитанные по функции F(Xi):\n";
     printArray(y, XY_SIZE, "y", false, 3);
 
@@ -104,7 +105,7 @@ int main()
     int x1Size;
     std::cin >> x1Size;
     while (x1Size < 10 || x1Size > 15) {
-        std::cout << "Размер массива не может быть больше 15 или меньше 10. Попробуйте еще раз.";
+        std::cout << "Размер массива не может быть больше 15 или меньше 10. Попробуйте еще раз: ";
         std::cin >> x1Size;
     }
 
